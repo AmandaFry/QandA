@@ -31,7 +31,11 @@ module.exports = function(app){
     });
 
     app.get('/answer/showq_and_a/:id', function(req,res){
-    	console.log('inside routes showaLL')
         answer.showSome(req, res);
-    })
+    });
+
+    app.post('/answer/like', function(req,res){
+    	console.log('inside routes like')
+        answer.like(req,res);
+    });
 }

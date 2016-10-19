@@ -15,5 +15,13 @@ myApp.factory('q_and_aFactory', function($http){
 		})
 	}
 
+	factory.like = function(answer,callback){
+		$http.post('/answer/like',answer).success(function(output){
+			answers = output;
+			callback(answers)
+		})
+	}
+
+
 	return factory;// make sure I return the result
 });
