@@ -9,7 +9,6 @@
   </div>
 </nav></br>
 
-<p>q and a page {{currentUser.name}} - {{currentUser._id}}</p>
 <h2>{{qinq_and_a.question}}</h2>
 <h3>{{qinq_and_a.description}}</h3>
 
@@ -26,7 +25,6 @@
       <tr ng-repeat="answer in answers | orderBy: '-likes' ">
         <td>
           <h4><strong>{{answer.owner}}</strong></h4>
-          <p>{{answer._id}}</p>
         </td>
         <td>
           <h4>{{answer.answer}}</h4>

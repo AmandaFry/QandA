@@ -11,7 +11,6 @@
 
 	<!-- Welcome section and search -->
 	<h2>Welcome {{currentUser.name}}</h2>
-	<p>{{currentUser._id}}</p>
 	</br>
 	<!-- Search filter -->
 	<div class="onRight">
@@ -28,8 +27,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="question in questions | filter: filter_question">
-				<td>{{question.question}} - {{question._id}}</td>
+			<tr ng-repeat="question in questions | orderBy: '-createdAt' | filter: filter_question">
+				<td>{{question.question}}</td>
 				<td>{{question.answerCount}}</td>
 				<td><a href="#/q_and_a/{{question._id}}">Show</a> - <a href="#/answer/{{question._id}}">Answer</a></td>
 			</tr>
