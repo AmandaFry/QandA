@@ -11,6 +11,10 @@ myApp.config(function ($routeProvider){
     	templateUrl: 'partials/dashboard.html',
     	controller: 'dashboardController',
     })
+    .when('/question',{
+        templateUrl: 'partials/new_question.html',
+        controller: 'questionController',        
+    })
 	.otherwise({
 		redirectTo: '/'
 	})

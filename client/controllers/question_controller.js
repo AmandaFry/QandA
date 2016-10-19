@@ -6,4 +6,13 @@ myApp.controller('questionController', function ($scope, $location,$routeParams,
 	//binding the currentUser so you can see it in the front page
 	$scope.currentUser = currentUser;
 	
+	//Cancel button - redirect back to prevouse page in this case was dashboard
+	$scope.cancel = function(){
+		$location.url('/dashboard');
+	}
+
+	//submit button
+	$scope.questionCreate = function(){
+		console.log($scope.newQ)
+	}
 })
