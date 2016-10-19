@@ -8,11 +8,11 @@ myApp.controller('answerController', function ($scope, $location,$routeParams,$c
 	//Able to capture ID from URL
 	var questionId = $routeParams.id;
 
-
-	// answerFactory.showOne(questionId, function(data){
-	// 	$scope.qinAnswer = data;
-	// 	$location.url('/answer/'+ questionId)
-	// })
+	//need to add the question
+	answerFactory.showOne(questionId, function(data){
+		$scope.qinAnswer = data;
+		$location.url('/answer/'+ questionId)
+	})
 
 	//Cancel button - redirect back to prevouse page in this case was dashboard
 	$scope.cancel = function(){

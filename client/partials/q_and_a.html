@@ -1,0 +1,43 @@
+<!-- navigation -->
+<nav class="nav navbar-nav navbar-right">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/dashboard">Home</a>
+      <a class="navbar-brand" href="#/answer/{{qinq_and_a._id}}">Answer to question</a>
+      <a class="navbar-brand" href="#/">Logout</a>
+    </div>
+  </div>
+</nav></br>
+
+<p>q and a page {{currentUser.name}} - {{currentUser._id}}</p>
+<h2>{{qinq_and_a.question}}</h2>
+<h3>{{qinq_and_a.desciprtion}}</h3>
+
+  <table class="table table-striped" style="border:1px solid tan;">
+    <thead>
+      <tr>
+        <td>Answer given by</td>
+        <td>Answer (support)</td>
+        <td>Likes</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="answer in answers | orderBy: '-likes' ">
+        <td>
+          <h4><strong>{{answer.owner}}</strong></h4>
+          <p>{{answer._id}}</p>
+        </td>
+        <td>
+          <h4>{{answer.answer}}</h4>
+          <p>{{answer.support}}</p>
+        </td>
+        <td>
+          <h5>{{answer.likes}} likes</h5>
+        </td>
+        <td>
+          <input class="btn btn-primary" type="submit" ng-click="like(answer)" value="like">          
+        </td>
+      </tr>
+    </tbody>
+  </table>

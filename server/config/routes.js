@@ -18,8 +18,20 @@ module.exports = function(app){
     });
 
     app.post('/new_answer', function(req, res){
-    	console.log('inside routes')
         answer.create(req, res);
     });
 
+    app.get('/question/showOne/:id', function(req,res){
+        question.showOne(req, res);
+    });
+
+    app.get('/question/showOne/:id', function(req,res){
+    	console.log('inside routes showOne')
+        question.showOne(req, res);
+    });
+
+    app.get('/answer/showq_and_a/:id', function(req,res){
+    	console.log('inside routes showaLL')
+        answer.showSome(req, res);
+    })
 }

@@ -31,5 +31,16 @@ module.exports = {
 
 	},
 
+	//get answers for q_and_a page
+	showSome: function(req, res){
+		Answers.find({questionID: req.params.id}, function(err, data){
+			if(err)
+                 console.log(err);
+            else
+                res.json(data); 
+        });
+	},
+
+
 
 }//end of module.export

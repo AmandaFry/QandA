@@ -7,5 +7,18 @@ myApp.controller('q_and_aController', function ($scope, $location,$routeParams,$
 	//binding the currentUser so you can see it in the front page
 	$scope.currentUser = currentUser;
 
+	//capture the id from the URL
+	var questionId = $routeParams.id;
+
+	
+	//get question
+	q_and_aFactory.showOne(questionId, function(dataQ){
+		$scope.qinq_and_a = dataQ;
+	})
+
+	//get answers
+	q_and_aFactory.showAnswers(questionId, function(dataA){
+		$scope.answers = dataA;
+	})
 
 })

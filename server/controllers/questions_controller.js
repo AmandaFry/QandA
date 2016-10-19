@@ -23,6 +23,7 @@ module.exports = {
 
 	},
 
+	//show all the question in the dashboard
 	showAll: function(req,res){
 		Questions.find({}, function(err,data){
             if(err)
@@ -31,5 +32,16 @@ module.exports = {
                res.json(data); //send back all the questions
         });
 	},
+
+	//send the question back as page title for the answer and q_and_a page
+	showOne: function(req,res){
+    	Questions.findOne({_id: req.params.id}, function(err,data){
+    		if(err)
+                console.log(err);
+            else
+                res.json(data);//send back one the questions
+        });
+    },
+
 
 }	
