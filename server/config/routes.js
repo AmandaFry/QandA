@@ -26,7 +26,6 @@ module.exports = function(app){
     });
 
     app.get('/question/showOne/:id', function(req,res){
-    	console.log('inside routes showOne')
         question.showOne(req, res);
     });
 
@@ -35,7 +34,6 @@ module.exports = function(app){
     });
 
     app.post('/answer/like', function(req,res){
-    	console.log('inside routes like')
         answer.like(req,res);
     });
 }
