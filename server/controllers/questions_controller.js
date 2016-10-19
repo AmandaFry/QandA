@@ -23,4 +23,14 @@ module.exports = {
 
 	},
 
+	showAll: function(req,res){
+		Questions.find({}, function(err,data){
+            if(err)
+                console.log(err);
+            else
+               res.json(data); //send back all the questions
+  
+        });
+	},
+
 }	

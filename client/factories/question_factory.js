@@ -7,6 +7,11 @@ myApp.factory('questionFactory', function($http){
 		});
 	};
 
+	factory.showAll = function(callback){
+		$http.get('/question/showAll').success(function(data){
+			callback(data);
+		})
+	}
 
 	return factory;// make sure I return the result
 });

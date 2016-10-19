@@ -9,10 +9,12 @@ module.exports = function(app){
     });
 
     app.post('/new_question', function(req, res){
-    	console.log('inside routes') //too see I got here
-    	console.log(req.body) // to see what did I send
     	question.create(req, res);
     });
 
+    app.get('/question/showAll', function(req,res){
+    	console.log('inside routes')
+    	question.showAll(req,res);
+    });
 
 }

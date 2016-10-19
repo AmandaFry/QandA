@@ -13,6 +13,27 @@
 	<h2>Welcome {{currentUser.name}}</h2>
 	<p>{{currentUser._id}}</p>
 	</br>
-
+	<!-- Search filter -->
+	<div class="onRight">
+		<label>Search:</label>
+		<input type="text" ng-model="filter_question">
+	</div>
+	<!-- Table for questions -->
+	<table class="table table-striped" style="border:1px solid tan;">
+		<thead>
+			<tr>
+				<td>Question</td>
+				<td>Answer</td>
+				<td>Action</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="question in questions | filter: filter_question">
+				<td>{{question.question}}</td>
+				<td>{{question.answerCount}}</td>
+				<td><a href="#/q_and_a/{{question._id}}">Show</a> - <a href="#/answer/{{question._id}}">Answer</a></td>
+			</tr>
+		</tbody>
+	</table>
 
 </div>
