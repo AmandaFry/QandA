@@ -22,3 +22,15 @@ var questionSchema = new mongoose.Schema({
 },{timestamps: true})
 
 var Questions = mongoose.model('Questions', questionSchema)
+
+//ANSWER SECTION
+//creating the answer schema 
+var answerSchema = new mongoose.Schema({
+	answer: {type: String, required:true, minlength:5},
+	support: {type: String, minlength:5},
+	owner: {type:String, required:true},
+	questionID: {type:String, required:true},
+	likes: {type: Number},
+},{timestamps: true})
+
+var Answers = mongoose.model('Answers', answerSchema)

@@ -29,7 +29,6 @@ module.exports = {
                 console.log(err);
             else
                res.json(data); //send back all the questions
-  
         });
 	},
 

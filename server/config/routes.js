@@ -1,5 +1,6 @@
 var users = require('../controllers/users_controller.js');
 var question = require('../controllers/questions_controller.js');
+var answer = require('../controllers/answers_controller.js');
 
 
 module.exports = function(app){
@@ -13,8 +14,12 @@ module.exports = function(app){
     });
 
     app.get('/question/showAll', function(req,res){
-    	console.log('inside routes')
     	question.showAll(req,res);
+    });
+
+    app.post('/new_answer', function(req, res){
+    	console.log('inside routes')
+        answer.create(req, res);
     });
 
 }
