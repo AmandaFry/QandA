@@ -11,3 +11,14 @@ var userSchema = new mongoose.Schema({
 //Here where I create Users table
 var Users = mongoose.model('Users', userSchema);
 
+//QUESTION SECTION
+//create the question schema 
+var questionSchema = new mongoose.Schema({
+	question: {type:String, required:true, minlength:5},
+	description: {type: String, minlength:5},
+	owner: {type:String, required:true},
+	answerCount: {type:Number, required:true},
+	// _owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required:true}
+},{timestamps: true})
+
+var Questions = mongoose.model('Questions', questionSchema)

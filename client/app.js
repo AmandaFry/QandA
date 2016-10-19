@@ -15,6 +15,7 @@ myApp.config(function ($routeProvider){
         templateUrl: 'partials/new_question.html',
         controller: 'questionController',        
     })
+    
 	.otherwise({
 		redirectTo: '/'
 	})

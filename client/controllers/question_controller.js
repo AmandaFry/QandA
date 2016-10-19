@@ -13,6 +13,12 @@ myApp.controller('questionController', function ($scope, $location,$routeParams,
 
 	//submit button
 	$scope.questionCreate = function(){
-		console.log($scope.newQ)
+		//I can access the newQ.question and newQ.description, I need to add owner id and anser count
+		$scope.newQ.owner = $scope.currentUser._id;
+		$scope.newQ.answerCount = 0;
+		questionFactory.create($scope.newQ, function(){
+			//after a new question is created I  want to redirect to dashbaord to show new question
+            $location.url('/dashboard');
+		})
 	}
 })
